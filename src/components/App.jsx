@@ -3,6 +3,7 @@ import { FeedbackButtons } from './FeedbackButtons';
 import { Statistics } from './Statistics';
 import { Section } from './Section';
 import { Notification } from './Notification';
+import PropTypes from 'prop-types';
 
 export class App extends React.Component {
   state = {
@@ -54,3 +55,12 @@ export class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
+  totalFeedback: PropTypes.number,
+  positivePercentage: PropTypes.number,
+  handleFeedback: PropTypes.func,
+};

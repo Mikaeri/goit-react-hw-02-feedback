@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export class FeedbackButtons extends React.Component {
   handleButtonClick = type => {
@@ -16,3 +17,7 @@ export class FeedbackButtons extends React.Component {
     );
   }
 }
+
+FeedbackButtons.propTypes = {
+  onFeedback: PropTypes.func.isRequired,
+};
