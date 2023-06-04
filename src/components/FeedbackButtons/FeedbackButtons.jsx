@@ -8,16 +8,17 @@ export class FeedbackButtons extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.handleButtonClick('good')}>Good</button>
-        <button onClick={() => this.handleButtonClick('neutral')}>
-          Neutral
-        </button>
-        <button onClick={() => this.handleButtonClick('bad')}>Bad</button>
+        {this.props.options.map(option => (
+          <button key={option} onClick={() => this.handleButtonClick(option)}>
+            {option}
+          </button>
+        ))}
       </div>
     );
   }
 }
 
 FeedbackButtons.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
   onFeedback: PropTypes.func.isRequired,
 };

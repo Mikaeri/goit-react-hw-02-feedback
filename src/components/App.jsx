@@ -1,8 +1,8 @@
 import React from 'react';
-import { FeedbackButtons } from './FeedbackButtons';
-import { Statistics } from './Statistics';
-import { Section } from './Section';
-import { Notification } from './Notification';
+import { FeedbackButtons } from './FeedbackButtons/FeedbackButtons';
+import { Statistics } from './Statistics/Statistics';
+import { Section } from './Section/Section';
+import { Notification } from './Notification/Notification';
 import PropTypes from 'prop-types';
 
 export class App extends React.Component {
@@ -36,7 +36,10 @@ export class App extends React.Component {
     return (
       <>
         <Section title="Please leave your feedback">
-          <FeedbackButtons onFeedback={this.handleFeedback} />
+          <FeedbackButtons
+            options={['good', 'neutral', 'bad']}
+            onFeedback={this.handleFeedback}
+          />
         </Section>
         <Section title="Statistics">
           {totalFeedback === 0 ? (
